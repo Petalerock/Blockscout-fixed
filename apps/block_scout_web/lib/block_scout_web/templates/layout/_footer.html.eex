@@ -17,74 +17,37 @@
 
     <div class="row">
       <div class="col-xs-12 col-lg-3">
-        <p class="footer-info-text"><%= gettext("Blockscout is a tool for inspecting and analyzing EVM based blockchains. Blockchain explorer for Ethereum Networks.") %></p>
+        <p class="footer-info-text"><%= gettext("Petale is a global financial technology company helping investors create and share value through digital assets, tokenization and wealth management.") %></p>
         <div class="footer-social-icons">
-          <a href="https://github.com/blockscout/blockscout" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
-            <div class="footer-social-icon-container fontawesome-icon github"></div>
+          <a href="https://www.instagram.com/petaleapp/" target="_blank" class="w-inline-block">
+            <img src="https://global-uploads.webflow.com/6239d28033d83785745b9328/62419ea23635840b9e7adef5_facebook.svg" loading="lazy" alt="Icon of Instagram">
           </a>
-          <a href="https://www.twitter.com/blockscoutcom/" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
+          <a href="https://twitter.com/PetaleGroup" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
             <div class="footer-social-icon-container fontawesome-icon twitter"></div>
           </a>
-          <a href="https://t.me/poa_network" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
+          <a href="https://www.instagram.com/petaleapp/" target="_blank" class="w-inline-block">
+            <img src="https://global-uploads.webflow.com/6239d28033d83785745b9328/62419ea23635840b9e7adef5_facebook.svg" loading="lazy" alt="Icon of Instagram">
+          </a>
+          <a href="https://t.me/PetaleApp" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
             <div class="footer-social-icon-container fontawesome-icon telegram"></div>
           </a>
+          <a href="https://discord.com/invite/RZuBbmtD8e" target="_blank" class="w-inline-block">
+            <img src="https://global-uploads.webflow.com/6239d28033d83785745b9328/62951d0144499c024ea0362f_discord.svg" loading="lazy" alt="" class="margin">
+          </a>
         </div>
+          <div id="w-node-_510140e5-5e06-768b-14f5-a1931b21c510-1b21c490" class="div">
+            <p class="paragraph small nomarg right">Petale Group. 229 Rue Saint Honoré. 75001 PARIS</p>
+          </div>
       </div>
 
       <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
-        <h3>BlockScout</h3>
+        <h3>Platefoms</h3>
         <ul>
-          <li><a href="<%= issue_link(@conn) %>" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Submit an Issue") %></a></li>
-          <li><a href="https://github.com/blockscout/blockscout" rel="noreferrer" class="footer-link"><%= gettext("Contribute") %></a></li>
-          <li><a href="https://gitter.im/poanetwork/blockscout" rel="noreferrer" class="footer-link"><%= gettext("Chat") %></a></li>
-          <li><a href="https://forum.poa.network/c/blockscout" rel="noreferrer" class="footer-link"><%= gettext("Support") %></a></li>
+          <li><a href="https://www.petale.com/vortex" rel="noreferrer" class="footer-link" target="_blank"><%= gettext("Vortex") %></a></li>
+          <li><a href="https://www.petale.com/token" rel="noreferrer" class="footer-link"><%= gettext("XPTL Token") %></a></li>
+          <li><a href="https://www.petale.com/cards" rel="noreferrer" class="footer-link"><%= gettext("Cards") %></a></li>
+          <li><a href="https://www.petale.com/app" rel="noreferrer" class="footer-link"><%= gettext("App") %></a></li>
         </ul>
       </div>
-      <% main_nets = main_nets(other_networks()) %>
-
-      <%= unless Enum.empty?(main_nets) do %>
-        <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
-          <h3><%= gettext("Main Networks") %></h3>
-          <ul>
-            <%= for %{title: title, url: url} <- main_nets do %>
-              <li><a href="<%= url %>" rel="norefferer" class="footer-link"> <%= title %> </a></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <% test_nets = test_nets(other_networks()) %>
-
-      <%= unless Enum.empty?(test_nets) do %>
-        <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
-          <h3><%= gettext("Test Networks") %></h3>
-          <ul>
-            <%= for %{title: title, url: url} <- test_nets do %>
-              <li><a href="<%= url %>" rel="noreferrer" class="footer-link"> <%= title %> </a></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <%= unless Enum.empty?(other_explorers) do %>
-        <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
-          <h3><%= gettext("Other Explorers") %></h3>
-          <ul>
-            <%= for {name, url} <- other_explorers do %>
-              <li><a href="<%= url %>" rel="noreferrer" class="footer-link"> <%= name %> </a></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-
-    <% version = version() %>
-
-    <%= unless ignore_version?(version) do %>
-      <% release_link = release_link(version) %>
-      <div>
-        <%= gettext("Version") %>: <%= release_link %>
-      </div>
-    <% end %>
   </div>
 </footer>
