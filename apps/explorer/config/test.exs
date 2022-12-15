@@ -48,7 +48,7 @@ config :explorer,
 
 variant =
   if is_nil(System.get_env("ETHEREUM_JSONRPC_VARIANT")) do
-    "parity"
+    "besu"
   else
     System.get_env("ETHEREUM_JSONRPC_VARIANT")
     |> String.split(".")
